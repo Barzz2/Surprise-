@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Typing Love Message</title>
+  <style>
+    body {
+      background: url('https://files.catbox.moe/vr2zcn.jpg') no-repeat center center fixed;  
+      background-size: cover;  
+      font-family: 'Pinky Love', sans-serif;  
+      color: black;  
+      display: flex;  
+      flex-direction: column;  
+      align-items: center;  
+      justify-content: center;  
+      min-height: 100vh;  
+      text-align: center;  
+      padding: 40px 20px;  
+      position: relative;  
+    }
+
+    #message-box {
+      background-color: #fff0f5;
+      border: 2px solid #e91e63;
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 600px;
+      font-size: 1.5em;
+      white-space: pre-wrap;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 10px;
+      background-color: #e91e63;
+      animation: blink 0.8s infinite;
+      margin-left: 3px;
+    }
+
+    @keyframes blink {
+      0%, 50%, 100% { opacity: 1; }
+      25%, 75% { opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div id="message-box">
+    <span id="text"></span><span class="cursor"></span>
+  </div>
+
+  <script>
+    const message = `Hai sayang 💖
+
+Selamat Hari Girlfriend yaa!
+Aku cuma mau bilang...
+
+Aku bersyukur banget punya kamu 🥺
+Makasih udah selalu ada buat aku.
+
+Aku sayang banget sama kamu, hari ini dan seterusnya. 🤍🤍🤍`;
+
+    let i = 0;
+    function typeText() {
+      if (i < message.length) {
+        document.getElementById("text").innerHTML += message.charAt(i);
+        i++;
+        setTimeout(typeText, 50);
+      }
+    }
+
+    window.onload = typeText;
+  </script>
+</body>
+</html>
